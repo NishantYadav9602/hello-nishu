@@ -19,7 +19,11 @@ pipeline {
 
         stage('Run Hello Nishu App') {
             steps {
-                sh 'node app.js'
+                // Run in background using nohup
+                sh '''
+                nohup node app.js > output.log 2>&1 &
+                echo "✅ App started successfully in background!"
+                '''
             }
         }
     }
