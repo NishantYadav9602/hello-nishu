@@ -4,7 +4,7 @@ const http = require('http');
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello Nishant Yadav\nI am DevOps Engineer \nIts Your Jenkins pipeline \n');
+  res.end('Hello Nishant Yadav\nI am DevOps Engineer  \n');
 });
 
 const PORT = 3000;
