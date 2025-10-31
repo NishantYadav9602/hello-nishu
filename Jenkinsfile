@@ -2,27 +2,23 @@ pipeline {
     agent any
 
     stages {
-        stage('Pull Latest Code') {
+        stage('Pull Code') {
             steps {
                 git branch: 'main', url: 'https://github.com/NishantYadav9602/hello-nishu.git'
             }
         }
 
-        stage('Install Node.js') {
+        stage('Install Dependencies') {
             steps {
-                sh 'curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -'
-                sh 'sudo apt-get install -y nodejs'
-                sh 'node -v'
-                sh 'npm -v'
+                sh 'npm install'
             }
         }
 
-        stage('Run Hello Nishu App') {
+        stage('Start Application') {
             steps {
-                // Run in background using nohup
                 sh '''
+                pkill -f node || true
                 nohup node app.js > output.log 2>&1 &
-                echo "✅ App started successfully in background!"
                 '''
             }
         }
