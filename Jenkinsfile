@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Pull Latest Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/NishantYadav9602/hello-nishu.git'
+                git 'https://github.com/NishantYadav9602/hello-nishu.git'
             }
         }
 
@@ -13,8 +13,6 @@ pipeline {
                 sh '''
                 sudo apt update -y
                 sudo apt install -y nodejs npm
-                node -v
-                npm -v
                 '''
             }
         }
@@ -22,7 +20,8 @@ pipeline {
         stage('Run Hello Nishu App') {
             steps {
                 sh '''
-                pkill node || true
+                node -v
+                npm -v
                 node app.js &
                 '''
             }
