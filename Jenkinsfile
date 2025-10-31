@@ -4,26 +4,22 @@ pipeline {
     stages {
         stage('Pull Latest Code') {
             steps {
-                git 'https://github.com/NishantYadav9602/hello-nishu.git'
+                git branch: 'main', url: 'https://github.com/NishantYadav9602/hello-nishu.git'
             }
         }
 
         stage('Install Node.js') {
             steps {
-                sh '''
-                sudo apt update -y
-                sudo apt install -y nodejs npm
-                '''
+                sh 'curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -'
+                sh 'sudo apt-get install -y nodejs'
+                sh 'node -v'
+                sh 'npm -v'
             }
         }
 
         stage('Run Hello Nishu App') {
             steps {
-                sh '''
-                node -v
-                npm -v
-                node app.js &
-                '''
+                sh 'node app.js'
             }
         }
     }
