@@ -3,7 +3,7 @@ const app = express();
 const PORT = 3000;
 
 app.get('/', (req, res) => {
-  res.send('<h1>Welcome! This is Nishu CI/CD Demo</h1>');
+  res.send('<h1>Webhook auto trigger working 🚀 - Nishu</h1>');
 
 });
 
