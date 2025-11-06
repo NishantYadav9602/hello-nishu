@@ -1,0 +1,23 @@
+{
+  "name": "hello-nishu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "author": "Nishant Yadav",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NishantYadav9602/hello-nishu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NishantYadav9602/hello-nishu/issues"
+  },
+  "homepage": "https://github.com/NishantYadav9602/hello-nishu#readme"
+}
+
